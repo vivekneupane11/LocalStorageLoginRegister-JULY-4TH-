@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="wrapper">
+        <p><i class="fas fa-user-plus"></i><span id="profilewelcome">Register/Login Now</span>
+            <button id="logout"><i class="fas fa-sign-in-alt"></i> LogOut</button>
+        </p>
+
+
+        <div class="card" style="width: 18rem; height:4rem;">
+            <img class="card-img-top" src="../image/photo-1502367448277-82e29b176948.jpeg" height="200px" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-title" id="name"></p>
+                <p class="card-text" id="email"></p>
+                <p class="card-text" id="contact"></p>
+                <p class="card-text" id="gender"></p>
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById('email').innerHTML = "Email Address :" + sessionStorage.getItem("Email");
+        document.getElementById('name').innerHTML = "Name :" + sessionStorage.getItem("Name");
+        document.getElementById('contact').innerHTML = "Contact :" + sessionStorage.getItem("Contact");
+        document.getElementById('gender').innerHTML = "Gender :" + sessionStorage.getItem("Gender");
+        document.getElementById('profilewelcome').innerHTML = sessionStorage.getItem("Name");
+        document.getElementById('logout').addEventListener('click', function() {
+            sessionStorage.clear();
+            window.location.href = "../index.html";
+        });
+    </script>
+
+    <script src="../js/main.js "></script>
+    <script src="../js/localstorage.js"></script>
+    <script src="../js/md5.min.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
