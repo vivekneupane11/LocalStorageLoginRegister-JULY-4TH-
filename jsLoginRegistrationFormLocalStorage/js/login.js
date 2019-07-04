@@ -117,9 +117,7 @@ loginbutton.addEventListener('click', function(e) {
             sessionStorage.setItem("Gender", data.gender);
             window.location.href = "./pages/profile.html";
 
-        } else {
-            alert('invalid');
-        }
+        } 
     })
-
+    alert("INVALID!! PLEASE REGISTER !! ITS RIGHT THERE");
 });
