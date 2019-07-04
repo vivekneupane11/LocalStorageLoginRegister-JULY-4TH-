@@ -118,7 +118,7 @@ loginbutton.addEventListener('click', function(e) {
             window.location.href = "./pages/profile.html";
 
         } else {
-            console.log('invalid');
+            alert('invalid');
         }
     })
 
