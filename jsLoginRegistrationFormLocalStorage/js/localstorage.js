@@ -44,7 +44,9 @@ DOMSTRING.domsignupbutton.addEventListener('click', function() {
 
     getStudents(localStorage.length - 1);
 
-
+    setTimeout(() => {
+        document.getElementById('welcome').innerHTML = "You have been Registered. Please login ";
+    }, 5000);
 
 
 });
@@ -59,5 +61,3 @@ function getStudents(id) {
 let finalid = localStorage.length - 1;
 let currentUser = localStorage.getItem('student' + finalid);
 let onlineUser = JSON.parse(currentUser);
-document.getElementById('alllist').innerHTML = onlineUser.name;
-document.getElementById('welcome').innerHTML = onlineUser.email + "(**WELCOME**)";

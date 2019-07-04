@@ -11,7 +11,7 @@ let loginpasswordicon = document.getElementById('loginpasswordicon');
 let loginemailerror = document.getElementById('loginemail-error');
 let loginpassworderror = document.getElementById('loginpassword-error');
 let eyeOpener = document.getElementById('eyeOpener');
-
+let isAuthenticated = 0;
 let correctloginEmail = false;
 let correctloginPassword = false;
 login.addEventListener('click', function() {
@@ -92,7 +92,7 @@ function loginValidation() {
         loginbutton.style.cursor = "pointer";
     } else {
         loginbutton.disabled = true;
-        loginbutton.style.cursor = "not-allowed";
+
 
     }
 
@@ -111,13 +111,18 @@ loginbutton.addEventListener('click', function(e) {
     totalstudents.forEach(function(data) {
 
         if (userEmail == data.email && userPassword == data.password) {
+            isAuthenticated = 1;
             sessionStorage.setItem("Email", userEmail);
             sessionStorage.setItem("Name", data.name);
             sessionStorage.setItem("Contact", data.contact);
             sessionStorage.setItem("Gender", data.gender);
             window.location.href = "./pages/profile.html";
 
-        } 
-    })
-    alert("INVALID!! PLEASE REGISTER !! ITS RIGHT THERE");
+        } else {
+            document.getElementById('welcome').innerHTML = "Invalid.Please Register";
+            document.getElementById('welcome').style.color = "red";
+        }
+    });
+
+
 });
